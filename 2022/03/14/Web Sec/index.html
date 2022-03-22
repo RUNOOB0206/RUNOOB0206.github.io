@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>web安全 入门概念名词 | 凌晨の狗窝</title><meta name="keywords" content="有在努力生活"><meta name="author" content="早上"><meta name="copyright" content="早上"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="此文章基于看B站小迪安全视频和结合CSDN文章后整理诞生。  域名What is 域名？可以简单的说：地址的名称称为域名，例：www.baidu.com域名（英语：Domain Name），又称网域，是由一串用点分隔的名字组成的internet上某一台计算机或计算机组的名称，用于在数据传输时对计算机的定位标识（有时也指地理位置）。由于IP地址具有不方便记忆并且不能显示地址组织的名称和性质等缺点，人">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web安全 入门概念名词">
+<meta property="og:url" content="http://example.com/2022/03/14/Web%20Sec/index.html">
+<meta property="og:site_name" content="凌晨の狗窝">
+<meta property="og:description" content="此文章基于看B站小迪安全视频和结合CSDN文章后整理诞生。  域名What is 域名？可以简单的说：地址的名称称为域名，例：www.baidu.com域名（英语：Domain Name），又称网域，是由一串用点分隔的名字组成的internet上某一台计算机或计算机组的名称，用于在数据传输时对计算机的定位标识（有时也指地理位置）。由于IP地址具有不方便记忆并且不能显示地址组织的名称和性质等缺点，人">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2022-03-14T14:46:32.000Z">
+<meta property="article:modified_time" content="2022-03-14T15:20:45.583Z">
+<meta property="article:author" content="早上">
+<meta property="article:tag" content="有在努力生活">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/./img/%E7%8B%97%E5%AD%904.jpg"><link rel="canonical" href="http://example.com/2022/03/14/Web%20Sec/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"Σ(っ °Д °;)っ该文章创建于","messageNext":"天前，文章内容可能过期，请优先查看新文章！！！"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":10,"languages":{"author":"作者: 早上","link":"链接: ","source":"来源: 凌晨の狗窝","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'web安全 入门概念名词',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-03-14 23:20:45'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="http://up.keaitupian.com/pic/97/c6/a3/97c6a3bbe0aa0151e9effca1dd1379c6.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 内容</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 足迹</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">凌晨の狗窝</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 内容</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 足迹</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">web安全 入门概念名词</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-03-14T14:46:32.000Z" title="发表于 2022-03-14 22:46:32">2022-03-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-03-14T15:20:45.583Z" title="更新于 2022-03-14 23:20:45">2022-03-14</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="web安全 入门概念名词"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>此文章基于看B站小迪安全视频和结合CSDN文章后整理诞生。</p>
+<p><img src="https://img-blog.csdnimg.cn/2021062314532754.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTQ0NjkzNg==,size_16,color_FFFFFF,t_70" alt="入门概念树状图"></p>
+<h1 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h1><h2 id="What-is-域名？"><a href="#What-is-域名？" class="headerlink" title="What is 域名？"></a>What is 域名？</h2><p>可以简单的说：地址的名称称为域名，例：<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a><br>域名（英语：Domain Name），又称网域，是由一串用点分隔的名字组成的internet上某一台计算机或计算机组的名称，用于在数据传输时对计算机的定位标识（有时也指地理位置）。<br>由于IP地址具有不方便记忆并且不能显示地址组织的名称和性质等缺点，人们设计出了域名。即IP地址对应的主机名<br>比如：<a target="_blank" rel="noopener" href="http://www.wikipedia.org是一个域名,www.baidu.com也是域名等/">www.wikipedia.org是一个域名，www.baidu.com也是域名等</a></p>
+<h2 id="域名在哪里注册"><a href="#域名在哪里注册" class="headerlink" title="域名在哪里注册"></a>域名在哪里注册</h2><p>腾讯云、阿里云、华为云</p>
+<h2 id="什么是二级域名？多级域名？"><a href="#什么是二级域名？多级域名？" class="headerlink" title="什么是二级域名？多级域名？"></a>什么是二级域名？多级域名？</h2><h3 id="顶级域名"><a href="#顶级域名" class="headerlink" title="顶级域名"></a>顶级域名</h3><p>（1）国家顶级域名（national top-level domainnames，简称nTLDs）<br>200多个国家都按照ISO3166国家代码分配了顶级域名，例如中国是cn，美国是us，日本是jp等<br>（2）国际顶级域名（international top-level domain names，简称iTDs）<br>例如表示工商企业的 .Com、.top，表示网络提供商的.net，表示非盈利组织的.org，表示教育的.edu等</p>
+<h3 id="二级域名"><a href="#二级域名" class="headerlink" title="二级域名"></a>二级域名</h3><p>二级域名是指顶级域名之下的域名，在国际顶级域名下，它是指域名注册人的网上名称，例如 ibm，yahoo，microsoft等；在国家顶级域名下，它是表示注册企业类别的符号，例如top，com，edu，gov，net等。<br>我国在国际互连网络信息中心（Inter NIC） 正式注册并运行的顶级域名是CN，这也是我国的一级域名。在顶级域名之下，我国的二级域名又分为类别域名和行政区域名两类。类别域名共6个， 包括用于科研机构的ac；用于工商金融企业的com、top；用于教育机构的edu；用于政府部门的 gov；用于互联网络信息中心和运行中心的net；用于非盈利组织的org。而行政区域名有34个，分别对应于我国各省、自治区和直辖市。</p>
+<h3 id="三级域名"><a href="#三级域名" class="headerlink" title="三级域名"></a>三级域名</h3><p>三级域名用字母（ A～Z，a～z，大小写等）、数字（0～9）和连接符（－）组成， 各级域名之间用实点（.）连接，三级域名的长度不能超过20个字符。 如无特殊原因，建议采用申请人的英文名（或者缩写）或者汉语拼音名（或者缩写） 作为三级域名，以保持域名的清晰性和简洁性。<br>参考：百度百科-域名注册</p>
+<h2 id="域名发现对安全测试有什么意义？"><a href="#域名发现对安全测试有什么意义？" class="headerlink" title="域名发现对安全测试有什么意义？"></a>域名发现对安全测试有什么意义？</h2><p>在渗透过程中，一般要对主域名进行安全检测，如果没有找到漏洞，则对子域名（多级域名）下手，可能会对测试多了一种可能性，从而检测到著主站的漏洞</p>
+<h1 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h1><h2 id="什么是DNS？"><a href="#什么是DNS？" class="headerlink" title="什么是DNS？"></a>什么是DNS？</h2><p>网域名称系统（DNS，Domain Name System）来将域名和IP地址相互映射，使人更方便地访问互联网，而不用去记住能够被机器直接读取的IP地址数串。也就是将域名转换为IP地址<br>域名就相当于一个电话簿，当我们想要打电话时，不用去记住每个人的电话，直接去调用它的名字即可，因为我们的电话簿里已经有我们想要打电话的那个人的号码了。</p>
+<h2 id="本地Hosts与DNS的关系"><a href="#本地Hosts与DNS的关系" class="headerlink" title="本地Hosts与DNS的关系"></a>本地Hosts与DNS的关系</h2><p>Hosts<br>hosts是一个没有扩展名的系统文件，可以用记事本打开。其作用就是将一些常用的域名与其对应的IP地址建立联系<br>地址：C:\Windows\System32\drivers\etc\hosts</p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20210623143428574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTQ0NjkzNg==,size_16,color_FFFFFF,t_70">https://img-blog.csdnimg.cn/20210623143428574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTQ0NjkzNg==,size_16,color_FFFFFF,t_70</a></p>
+<h2 id="Hosts与DNS的联系"><a href="#Hosts与DNS的联系" class="headerlink" title="Hosts与DNS的联系"></a>Hosts与DNS的联系</h2><p>当用户在浏览器中输入一个需要登录的网址时，系统会首先自动从Hosts文件中寻找对应的IP地址，一旦找到，系统会立即打开对应网页，如果没有找到，则系统会再将网址提交DNS域名解析服务器进行IP地址的解析。也就是说，Hosts的请求别级比DNS高</p>
+<h2 id="Hosts与DNS的区别"><a href="#Hosts与DNS的区别" class="headerlink" title="Hosts与DNS的区别"></a>Hosts与DNS的区别</h2><p>DNS也是用来解析IP地址的，只不过hosts文件用户可以自由修改，但DNS上的内容用户是无法修改的，只可以选择使用哪个DNS服务。一般默认使用电信服务商，但也可以选择第三方服务，如Google，阿里，百度等。</p>
+<h2 id="实验演示"><a href="#实验演示" class="headerlink" title="实验演示"></a>实验演示</h2><p>先ping一下百度<br><img src="https://img-blog.csdnimg.cn/20210623143428574.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTQ0NjkzNg==,size_16,color_FFFFFF,t_70" alt=" "></p>
+<p>修改hosts文件，将域名baidu.com的ip映射为127.0.0.1<br><img src="https://img-blog.csdnimg.cn/20210623143438161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTQ0NjkzNg==,size_16,color_FFFFFF,t_70" alt=" "></p>
+<p>再试着ping<br><img src="https://img-blog.csdnimg.cn/20210623143447792.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTQ0NjkzNg==,size_16,color_FFFFFF,t_70" alt=" "></p>
+<h2 id="CDN是什么？与DNS的关系"><a href="#CDN是什么？与DNS的关系" class="headerlink" title="CDN是什么？与DNS的关系"></a>CDN是什么？与DNS的关系</h2><h3 id="CDN的全称是Content-Delivery-Network，即内容分发网络。"><a href="#CDN的全称是Content-Delivery-Network，即内容分发网络。" class="headerlink" title="CDN的全称是Content Delivery Network，即内容分发网络。"></a>CDN的全称是Content Delivery Network，即内容分发网络。</h3><p>CDN是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块</p>
+<h3 id="CDN的基本原理"><a href="#CDN的基本原理" class="headerlink" title="CDN的基本原理"></a>CDN的基本原理</h3><p>是广泛采用各种缓存服务器，将这些缓存服务器分布到用户访问相对集中的地区或网络中，在用户访问网站时，利用全局负载技术将用户的访问指向距离最近的工作正常的缓存服务器上，由缓存服务器直接响应用户请求。</p>
+<h3 id="CDN的目的"><a href="#CDN的目的" class="headerlink" title="CDN的目的"></a>CDN的目的</h3><p>使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。</p>
+<h3 id="CDN的关键技术"><a href="#CDN的关键技术" class="headerlink" title="CDN的关键技术"></a>CDN的关键技术</h3><p>主要有内容存储和分发技术。<br>参考：百度百科-CDN</p>
+<p>CDN与DNS的区别与联系.</p>
+<h2 id="常见的DNS安全攻击有哪些"><a href="#常见的DNS安全攻击有哪些" class="headerlink" title="常见的DNS安全攻击有哪些"></a>常见的DNS安全攻击有哪些</h2><p>DNS的常见攻击方式.</p>
+<h1 id="脚本语言"><a href="#脚本语言" class="headerlink" title="脚本语言"></a>脚本语言</h1><h2 id="常见的脚本语言类型有哪些？"><a href="#常见的脚本语言类型有哪些？" class="headerlink" title="常见的脚本语言类型有哪些？"></a>常见的脚本语言类型有哪些？</h2><p>• 脚本语言是为了缩短传统的编写-编译-链接-运行（edit-compile-link-run）过程而创建的计算机编程语言<br>• 常见的脚本语言类型：Python、JavaScript、Asp (逐渐淘汰，基本都是小站点在使用)、Aspx、php （目前比较流行）javaweb、 pl、cgi等</p>
+<h2 id="不同脚本类型与安全漏洞的关系"><a href="#不同脚本类型与安全漏洞的关系" class="headerlink" title="不同脚本类型与安全漏洞的关系"></a>不同脚本类型与安全漏洞的关系</h2><p>不同的脚本语言的编写规则不一样，程序产生的漏洞自然也不一样（代码审计）。</p>
+<h2 id="漏洞挖掘代码审计与脚本漏洞的关系"><a href="#漏洞挖掘代码审计与脚本漏洞的关系" class="headerlink" title="漏洞挖掘代码审计与脚本漏洞的关系"></a>漏洞挖掘代码审计与脚本漏洞的关系</h2><p>更严谨的语言，安全性相对更高</p>
+<h1 id="后门"><a href="#后门" class="headerlink" title="后门"></a>后门</h1><h2 id="什么是后门？有哪些后门？"><a href="#什么是后门？有哪些后门？" class="headerlink" title="什么是后门？有哪些后门？"></a>什么是后门？有哪些后门？</h2><h3 id="什么是后门"><a href="#什么是后门" class="headerlink" title="什么是后门"></a>什么是后门</h3><p>是指一种绕过安全性控制而获取对程序或系统访问权的方法。在软件的开发阶段，程序员常会在软件内创建后门以便可以修改程序中的缺陷。如果后门被其他人知道，或者在发布软件之前没有删除，那么它就成了安全风险，容易被黑客当成漏洞进行攻击。</p>
+<h3 id="后门的分类"><a href="#后门的分类" class="headerlink" title="后门的分类"></a>后门的分类</h3><h4 id="•-网页后门"><a href="#•-网页后门" class="headerlink" title="• 网页后门"></a>• 网页后门</h4><p>此类后门程序一般都是服务器上正常 的web服务来构造自己的连接方式，比如非常流行的ASP、cgi脚本后门等。</p>
+<h4 id="•-线程插入后门"><a href="#•-线程插入后门" class="headerlink" title="• 线程插入后门"></a>• 线程插入后门</h4><p>这种后门在运行时没有进程,所有网络操作均播入到其他应用程序的进程中完成。也就是说，即使受控制端安装的防火墙拥有“应用程序访问权限”的功能，也不能对这样的后门进行有效的警告和拦截，也就使对方的防火墙形同虚设了!因为对它的查杀比较困难，这种后门本身的功能比较强大，是“居中家旅行、入侵攻击”的必备品哦!</p>
+<h4 id="•-扩展后门"><a href="#•-扩展后门" class="headerlink" title="• 扩展后门"></a>• 扩展后门</h4><p>所谓的扩展后门，在普通意义上理解，可以看成是将非常多的功能集成到了后门里，让后门本身就可以实现很多功能，方便直接控制肉鸡或者服务器，这类的后门非常受初学者的喜爱，通常集成了文件上传/下载、系统用户检测、HTTP访问、终端安装、端口开放、启动/停止服务等功能，本身就是个小的工具包，功能强大。</p>
+<h4 id="•-C-S后门"><a href="#•-C-S后门" class="headerlink" title="• C/S后门"></a>• C/S后门</h4><p>传统的木马程序常常使用C/S构架，这样的构架很方便控制，也在一定程度上避免了“万能密码”的情况出现，对后门私有化有一定的贡献，这方面分类比较模糊，很多后门可以归结到此类中，比如较巧妙的就是ICMP Door了</p>
+<h4 id="•-账号后门"><a href="#•-账号后门" class="headerlink" title="• 账号后门"></a>• 账号后门</h4><p>账号后门技术是指黑客为了长期控制目标计算机，通过后门在目标计算机中建立一个备用管理员账户的技术。一般采用克隆账户技术。克隆账户一般有两种方式，一个是手动克隆账户，一个是使用克隆工具。</p>
+<p>注：具体参考百度百科-后门程序</p>
+<h2 id="后门在安全测试中的实际意义"><a href="#后门在安全测试中的实际意义" class="headerlink" title="后门在安全测试中的实际意义"></a>后门在安全测试中的实际意义</h2><p>在获取到相关权限的时候，后门就相当于一个管道，提供一个通道去连接网站或者服务器，使得攻击者可以控制整个网站或者服务器去达到自己的目标</p>
+<h2 id="关于后门需要了解哪些？（玩法、免杀）"><a href="#关于后门需要了解哪些？（玩法、免杀）" class="headerlink" title="关于后门需要了解哪些？（玩法、免杀）"></a>关于后门需要了解哪些？（玩法、免杀）</h2><h3 id="•-玩法（创建后门之后我们可以怎么样操作？）："><a href="#•-玩法（创建后门之后我们可以怎么样操作？）：" class="headerlink" title="• 玩法（创建后门之后我们可以怎么样操作？）："></a>• 玩法（创建后门之后我们可以怎么样操作？）：</h3><p>网站后门：便于控制网站<br>软件后门：用于控制<br>服务器后门：可以进行脱库、盗取信息</p>
+<h3 id="•-免杀：防止相关东西检测到后门"><a href="#•-免杀：防止相关东西检测到后门" class="headerlink" title="• 免杀：防止相关东西检测到后门"></a>• 免杀：防止相关东西检测到后门</h3><p>免杀技术全称为反杀毒技术Anti Anti- Virus简称“免杀”，它指的是一种能使病毒木马免于被杀毒软件查杀的技术。由于免杀技术的涉猎面非常广，其中包含反汇编、逆向工程、系统漏洞等黑客技术，所以难度很高，一般人不会或没能力接触这技术的深层内容。其内容基本上都是修改病毒、木马的内容改变特征码，从而躲避了杀毒软件的查杀。</p>
+<h3 id="•-技术分类"><a href="#•-技术分类" class="headerlink" title="• 技术分类"></a>• 技术分类</h3><p>1、开源免杀：指在有病毒、木马源代码的前提下，通过修改源代码进行免杀。<br>2、手工免杀：指在仅有病毒、木马的可执行文件(.exe)（PE文件）的情况下进行免杀。</p>
+<p>参考：百度百科-免杀</p>
+<h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h2 id="web的组成架构模型"><a href="#web的组成架构模型" class="headerlink" title="web的组成架构模型"></a>web的组成架构模型</h2><p>WEB的组成架构模型：网站原码、操作系统、中间件（搭建平台，提供服务的）、数据库。<br>• 网站源码：分脚本类型（不同功能的实现需要不同的语言），分应用方向（方向不同所使用的函数不同）<br>• 操作系统：windows linux<br>• 中间件（搭建平台）：apache iis tomcat nginx等<br>• 数据库：access mysql mssql oracle sybase db2 postsql等。存储了大量与网站相关的数据以及管理员数据</p>
+<h2 id="架构漏洞安全简要测试"><a href="#架构漏洞安全简要测试" class="headerlink" title="架构漏洞安全简要测试"></a>架构漏洞安全简要测试</h2><p>安全测试分为四个层面，包括通信层、应用服务层、系统层、管理层的测试<br>安全测试</p>
+<h2 id="为什么要从web界面为主为首？"><a href="#为什么要从web界面为主为首？" class="headerlink" title="为什么要从web界面为主为首？"></a>为什么要从web界面为主为首？</h2><p>用户接触web层面最多，大部分都是从web页面入手慢慢渗透到服务器。直接从操作系统入手不太现实（大部分情况下接触不到）。</p>
+<h1 id="web安全相关漏洞"><a href="#web安全相关漏洞" class="headerlink" title="web安全相关漏洞"></a>web安全相关漏洞</h1><p>web源码类对应漏洞<br>web中间件对应漏洞</p>
+<h2 id="web数据库对应漏洞"><a href="#web数据库对应漏洞" class="headerlink" title="web数据库对应漏洞"></a>web数据库对应漏洞</h2><p>弱口令、SQL注入等</p>
+<h2 id="web系统层对应漏洞"><a href="#web系统层对应漏洞" class="headerlink" title="web系统层对应漏洞"></a>web系统层对应漏洞</h2><p>提权、代码执行漏洞等。较少，了解即可</p>
+<h2 id="其他第三方对应漏洞"><a href="#其他第三方对应漏洞" class="headerlink" title="其他第三方对应漏洞"></a>其他第三方对应漏洞</h2><p>被利用的第三方ActiveX插件漏洞，涉及迅雷、暴风影音、百度超级搜霸、realplayer等多款常见软件的部分版本中，而且其中多数漏洞曾经是或者现在仍是0day漏洞。它是相对于系统漏洞后一些插件的漏洞来说的,所以叫第三方漏洞。</p>
+<h2 id="APP或者PC应用结合类"><a href="#APP或者PC应用结合类" class="headerlink" title="APP或者PC应用结合类"></a>APP或者PC应用结合类</h2><p>有些APP内核就是网站<br>低情商：懒得多开发<br>高情商：节约开发成本<br>————————————————<br>版权声明：本文参考CSDN博主「要努力。。」的原创文章特附上原文出处链接及声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_51446936/article/details/118152384">https://blog.csdn.net/weixin_51446936/article/details/118152384</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">早上</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/03/14/Web%20Sec/">http://example.com/2022/03/14/Web%20Sec/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">凌晨の狗窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/./img/%E5%BE%AE%E4%BF%A1.jpg" target="_blank"><img class="post-qr-code-img" src="/./img/%E5%BE%AE%E4%BF%A1.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/./img/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg" target="_blank"><img class="post-qr-code-img" src="/./img/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/03/22/hello-world/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hello World</div></div></a></div><div class="next-post pull-right"><a href="/2022/03/01/Web%20Sec%202/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">web安全 数据包拓展</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NTIzMS8zMTY5OA=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="http://up.keaitupian.com/pic/97/c6/a3/97c6a3bbe0aa0151e9effca1dd1379c6.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">早上</div><div class="author-info__description">斯是狗窝 唯吾可爱</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/RUNOOB0206"><i class="fab fa-github"></i><span>求关注去o((&gt;ω&lt; ))o</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/RUNOOB0206" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1489114432@qq.com" target="_blank" title="邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到狗紫的博客是ヾ(•ω•`)o</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D"><span class="toc-number">1.</span> <span class="toc-text">域名</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-%E5%9F%9F%E5%90%8D%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">What is 域名？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D%E5%9C%A8%E5%93%AA%E9%87%8C%E6%B3%A8%E5%86%8C"><span class="toc-number">1.2.</span> <span class="toc-text">域名在哪里注册</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D%EF%BC%9F%E5%A4%9A%E7%BA%A7%E5%9F%9F%E5%90%8D%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">什么是二级域名？多级域名？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B6%E7%BA%A7%E5%9F%9F%E5%90%8D"><span class="toc-number">1.3.1.</span> <span class="toc-text">顶级域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D"><span class="toc-number">1.3.2.</span> <span class="toc-text">二级域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BA%A7%E5%9F%9F%E5%90%8D"><span class="toc-number">1.3.3.</span> <span class="toc-text">三级域名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D%E5%8F%91%E7%8E%B0%E5%AF%B9%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95%E6%9C%89%E4%BB%80%E4%B9%88%E6%84%8F%E4%B9%89%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">域名发现对安全测试有什么意义？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DNS"><span class="toc-number">2.</span> <span class="toc-text">DNS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFDNS%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">什么是DNS？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0Hosts%E4%B8%8EDNS%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.2.</span> <span class="toc-text">本地Hosts与DNS的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hosts%E4%B8%8EDNS%E7%9A%84%E8%81%94%E7%B3%BB"><span class="toc-number">2.3.</span> <span class="toc-text">Hosts与DNS的联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hosts%E4%B8%8EDNS%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.4.</span> <span class="toc-text">Hosts与DNS的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%BC%94%E7%A4%BA"><span class="toc-number">2.5.</span> <span class="toc-text">实验演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CDN%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E4%B8%8EDNS%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.6.</span> <span class="toc-text">CDN是什么？与DNS的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CDN%E7%9A%84%E5%85%A8%E7%A7%B0%E6%98%AFContent-Delivery-Network%EF%BC%8C%E5%8D%B3%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91%E7%BD%91%E7%BB%9C%E3%80%82"><span class="toc-number">2.6.1.</span> <span class="toc-text">CDN的全称是Content Delivery Network，即内容分发网络。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CDN%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-number">2.6.2.</span> <span class="toc-text">CDN的基本原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CDN%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="toc-number">2.6.3.</span> <span class="toc-text">CDN的目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CDN%E7%9A%84%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF"><span class="toc-number">2.6.4.</span> <span class="toc-text">CDN的关键技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84DNS%E5%AE%89%E5%85%A8%E6%94%BB%E5%87%BB%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">2.7.</span> <span class="toc-text">常见的DNS安全攻击有哪些</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80"><span class="toc-number">3.</span> <span class="toc-text">脚本语言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">3.1.</span> <span class="toc-text">常见的脚本语言类型有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E8%84%9A%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%AE%89%E5%85%A8%E6%BC%8F%E6%B4%9E%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">3.2.</span> <span class="toc-text">不同脚本类型与安全漏洞的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E4%B8%8E%E8%84%9A%E6%9C%AC%E6%BC%8F%E6%B4%9E%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">3.3.</span> <span class="toc-text">漏洞挖掘代码审计与脚本漏洞的关系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E9%97%A8"><span class="toc-number">4.</span> <span class="toc-text">后门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%90%8E%E9%97%A8%EF%BC%9F%E6%9C%89%E5%93%AA%E4%BA%9B%E5%90%8E%E9%97%A8%EF%BC%9F"><span class="toc-number">4.1.</span> <span class="toc-text">什么是后门？有哪些后门？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%90%8E%E9%97%A8"><span class="toc-number">4.1.1.</span> <span class="toc-text">什么是后门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E9%97%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">4.1.2.</span> <span class="toc-text">后门的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%A2-%E7%BD%91%E9%A1%B5%E5%90%8E%E9%97%A8"><span class="toc-number">4.1.2.1.</span> <span class="toc-text">• 网页后门</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%A2-%E7%BA%BF%E7%A8%8B%E6%8F%92%E5%85%A5%E5%90%8E%E9%97%A8"><span class="toc-number">4.1.2.2.</span> <span class="toc-text">• 线程插入后门</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%A2-%E6%89%A9%E5%B1%95%E5%90%8E%E9%97%A8"><span class="toc-number">4.1.2.3.</span> <span class="toc-text">• 扩展后门</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%A2-C-S%E5%90%8E%E9%97%A8"><span class="toc-number">4.1.2.4.</span> <span class="toc-text">• C&#x2F;S后门</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%A2-%E8%B4%A6%E5%8F%B7%E5%90%8E%E9%97%A8"><span class="toc-number">4.1.2.5.</span> <span class="toc-text">• 账号后门</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E9%97%A8%E5%9C%A8%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E7%9A%84%E5%AE%9E%E9%99%85%E6%84%8F%E4%B9%89"><span class="toc-number">4.2.</span> <span class="toc-text">后门在安全测试中的实际意义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%90%8E%E9%97%A8%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3%E5%93%AA%E4%BA%9B%EF%BC%9F%EF%BC%88%E7%8E%A9%E6%B3%95%E3%80%81%E5%85%8D%E6%9D%80%EF%BC%89"><span class="toc-number">4.3.</span> <span class="toc-text">关于后门需要了解哪些？（玩法、免杀）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%A2-%E7%8E%A9%E6%B3%95%EF%BC%88%E5%88%9B%E5%BB%BA%E5%90%8E%E9%97%A8%E4%B9%8B%E5%90%8E%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E6%80%8E%E4%B9%88%E6%A0%B7%E6%93%8D%E4%BD%9C%EF%BC%9F%EF%BC%89%EF%BC%9A"><span class="toc-number">4.3.1.</span> <span class="toc-text">• 玩法（创建后门之后我们可以怎么样操作？）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%A2-%E5%85%8D%E6%9D%80%EF%BC%9A%E9%98%B2%E6%AD%A2%E7%9B%B8%E5%85%B3%E4%B8%9C%E8%A5%BF%E6%A3%80%E6%B5%8B%E5%88%B0%E5%90%8E%E9%97%A8"><span class="toc-number">4.3.2.</span> <span class="toc-text">• 免杀：防止相关东西检测到后门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%A2-%E6%8A%80%E6%9C%AF%E5%88%86%E7%B1%BB"><span class="toc-number">4.3.3.</span> <span class="toc-text">• 技术分类</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web"><span class="toc-number">5.</span> <span class="toc-text">web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#web%E7%9A%84%E7%BB%84%E6%88%90%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%9E%8B"><span class="toc-number">5.1.</span> <span class="toc-text">web的组成架构模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84%E6%BC%8F%E6%B4%9E%E5%AE%89%E5%85%A8%E7%AE%80%E8%A6%81%E6%B5%8B%E8%AF%95"><span class="toc-number">5.2.</span> <span class="toc-text">架构漏洞安全简要测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BB%8Eweb%E7%95%8C%E9%9D%A2%E4%B8%BA%E4%B8%BB%E4%B8%BA%E9%A6%96%EF%BC%9F"><span class="toc-number">5.3.</span> <span class="toc-text">为什么要从web界面为主为首？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web%E5%AE%89%E5%85%A8%E7%9B%B8%E5%85%B3%E6%BC%8F%E6%B4%9E"><span class="toc-number">6.</span> <span class="toc-text">web安全相关漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#web%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%B9%E5%BA%94%E6%BC%8F%E6%B4%9E"><span class="toc-number">6.1.</span> <span class="toc-text">web数据库对应漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web%E7%B3%BB%E7%BB%9F%E5%B1%82%E5%AF%B9%E5%BA%94%E6%BC%8F%E6%B4%9E"><span class="toc-number">6.2.</span> <span class="toc-text">web系统层对应漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E7%AC%AC%E4%B8%89%E6%96%B9%E5%AF%B9%E5%BA%94%E6%BC%8F%E6%B4%9E"><span class="toc-number">6.3.</span> <span class="toc-text">其他第三方对应漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#APP%E6%88%96%E8%80%85PC%E5%BA%94%E7%94%A8%E7%BB%93%E5%90%88%E7%B1%BB"><span class="toc-number">6.4.</span> <span class="toc-text">APP或者PC应用结合类</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/03/22/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/03/22/hello-world/" title="Hello World">Hello World</a><time datetime="2022-03-22T06:36:04.349Z" title="发表于 2022-03-22 14:36:04">2022-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/14/Web%20Sec/" title="web安全 入门概念名词"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web安全 入门概念名词"/></a><div class="content"><a class="title" href="/2022/03/14/Web%20Sec/" title="web安全 入门概念名词">web安全 入门概念名词</a><time datetime="2022-03-14T14:46:32.000Z" title="发表于 2022-03-14 22:46:32">2022-03-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/01/Web%20Sec%202/" title="web安全 数据包拓展"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web安全 数据包拓展"/></a><div class="content"><a class="title" href="/2022/03/01/Web%20Sec%202/" title="web安全 数据包拓展">web安全 数据包拓展</a><time datetime="2022-03-01T14:53:32.000Z" title="发表于 2022-03-01 22:53:32">2022-03-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 早上</div><div class="footer_custom_text">欢迎常来狗舍😂</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="汪汪~,旺旺~,汪汪~" data-fontsize="15px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
