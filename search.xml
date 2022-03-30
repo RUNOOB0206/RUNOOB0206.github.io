@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>web安全 web源码拓展</title>
+      <link href="/2022/03/30/Web%20Sec4/"/>
+      <url>/2022/03/30/Web%20Sec4/</url>
+      
+        <content type="html"><![CDATA[<p>此文章基于看B站小迪安全视频和整合网上相关资源后整理诞生。</p><p><img src="https://i0.hdslb.com/bfs/article/07a53b835828682f05dd4d428f59555a26ae5df3.png@831w_605h_progressive.webp" alt=" "></p><h1 id="关于-WEB-源码目录结构"><a href="#关于-WEB-源码目录结构" class="headerlink" title="关于 WEB 源码目录结构"></a>关于 WEB 源码目录结构</h1><p><img src="https://i0.hdslb.com/bfs/article/c5c32951fccd9f28e7b94b44114e779719f6e58e.png@831w_582h_progressive.webp" alt=" "></p><ol><li>网站的脚本类型—asp脚本—从index.asp判断出</li><li>网站的管理后台—admin目录</li><li>网站的数据—data目录—包含数据库配置文件</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>web安全 搭建安全拓展</title>
       <link href="/2022/03/22/Web%20Sec3/"/>
       <url>/2022/03/22/Web%20Sec3/</url>
