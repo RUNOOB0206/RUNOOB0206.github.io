@@ -1,0 +1,366 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>web安全 系统及数据库 | 凌晨の狗窝</title><meta name="keywords" content="有在努力生活"><meta name="author" content="早上"><meta name="copyright" content="早上"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="此文章基于看B站小迪安全视频和整合网上相关资源后整理诞生。  操作系统层面识别操作系统的方法 如果是网站—-windows大小写不区分，Linux区分大小写 windows类型 Linux类型 根据ttl的值来判断不同的操作系统的默认TTL值是不同的， 所以我们可以通过TTL值来判断主机的操作系统，但是当用户修改了TTL值的时候，就会误导我们的判断，所以这种判断方式也不一定准确。下面是默认操作系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web安全 系统及数据库">
+<meta property="og:url" content="http://example.com/2022/04/08/Web%20Sec5/index.html">
+<meta property="og:site_name" content="凌晨の狗窝">
+<meta property="og:description" content="此文章基于看B站小迪安全视频和整合网上相关资源后整理诞生。  操作系统层面识别操作系统的方法 如果是网站—-windows大小写不区分，Linux区分大小写 windows类型 Linux类型 根据ttl的值来判断不同的操作系统的默认TTL值是不同的， 所以我们可以通过TTL值来判断主机的操作系统，但是当用户修改了TTL值的时候，就会误导我们的判断，所以这种判断方式也不一定准确。下面是默认操作系统">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2022-04-07T16:01:06.000Z">
+<meta property="article:modified_time" content="2022-04-07T17:08:43.585Z">
+<meta property="article:author" content="早上">
+<meta property="article:tag" content="有在努力生活">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/./img/%E7%8B%97%E5%AD%904.jpg"><link rel="canonical" href="http://example.com/2022/04/08/Web%20Sec5/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"Σ(っ °Д °;)っ该文章创建于","messageNext":"天前，文章内容可能过期，请优先查看新文章！！！"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":10,"languages":{"author":"作者: 早上","link":"链接: ","source":"来源: 凌晨の狗窝","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'web安全 系统及数据库',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-08 01:08:43'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="http://up.keaitupian.com/pic/97/c6/a3/97c6a3bbe0aa0151e9effca1dd1379c6.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 内容</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 足迹</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">凌晨の狗窝</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 内容</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 足迹</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">web安全 系统及数据库</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-04-07T16:01:06.000Z" title="发表于 2022-04-08 00:01:06">2022-04-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-07T17:08:43.585Z" title="更新于 2022-04-08 01:08:43">2022-04-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="web安全 系统及数据库"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>此文章基于看B站小迪安全视频和整合网上相关资源后整理诞生。</p>
+<p><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%931.jpg"></p>
+<h1 id="操作系统层面"><a href="#操作系统层面" class="headerlink" title="操作系统层面"></a>操作系统层面</h1><h2 id="识别操作系统的方法"><a href="#识别操作系统的方法" class="headerlink" title="识别操作系统的方法"></a>识别操作系统的方法</h2><ul>
+<li>如果是网站—-windows大小写不区分，Linux区分大小写</li>
+<li>windows类型<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%932.jpg"><br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%933.jpg"></li>
+<li>Linux类型<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%933.5.jpg"><br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%934.jpg"></li>
+<li>根据ttl的值来判断<br>不同的操作系统的默认TTL值是不同的， 所以我们可以通过TTL值来判断主机的操作系统，但是当用户修改了TTL值的时候，就会误导我们的判断，所以这种判断方式也不一定准确。下面是默认操作系统的TTL：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、WINDOWS NT/2000   TTL：128</span><br><span class="line">2、WINDOWS 95/98     TTL：32</span><br><span class="line">3、UNIX              TTL：255</span><br><span class="line">4、LINUX             TTL：64</span><br><span class="line">5、WIN7              TTL：64</span><br></pre></td></tr></table></figure>
+<img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%935.jpg"><br>如图，ttl为106，接近128，估计为windows系统</li>
+<li>Nmap扫描—-虚拟机ubantu—192.168.0.102（有问题，不晓得错哪了）</li>
+<li>用kail扫描<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%936.jpg"></li>
+<li>用windows本机扫描<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%937.jpg"></li>
+<li>Nmap扫描—-虚拟机windowsserver2003（有网站）—192.168.0.103</li>
+<li>kail扫描—windows2003<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%938.jpg"></li>
+<li>windows扫描<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%939.jpg"><h2 id="不同os的区别"><a href="#不同os的区别" class="headerlink" title="不同os的区别"></a>不同os的区别</h2></li>
+<li>操作，命令，界面，大小写，文件类型，编码方式等等</li>
+<li>最主要：文件路径的问题，windows磁盘分区，Linux根结点<h2 id="操作系统层面漏洞类型对应的意义与影响范围"><a href="#操作系统层面漏洞类型对应的意义与影响范围" class="headerlink" title="操作系统层面漏洞类型对应的意义与影响范围"></a>操作系统层面漏洞类型对应的意义与影响范围</h2></li>
+<li>dos攻击，缓冲区溢出，提权等等</li>
+<li>MS10710永恒之蓝漏洞—举例</li>
+<li>使用search命令来寻找一下ms17_010模块<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9310.jpg"></li>
+<li>需要配置目标地址和payload以及本地地址<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9311.jpg"></li>
+<li>需要配置目标地址和payload以及本地地址，使用exploit的命令执行—-主机没有这个MS10710漏洞<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9312.jpg"></li>
+<li>总结—-通过漏洞获取权限，进行提权</li>
+</ul>
+<h1 id="数据库层面"><a href="#数据库层面" class="headerlink" title="数据库层面"></a>数据库层面</h1><h2 id="数据库类型识别"><a href="#数据库类型识别" class="headerlink" title="数据库类型识别"></a>数据库类型识别</h2><ul>
+<li>通过脚本识别<br>Asp+access Php+mysql Aspx+mssql Jsp+mssql,oracle Python+mogodb</li>
+<li>通过操作系统识别<br>Windows下才有—access，sqlserver</li>
+<li>利用端口扫描—-数据库会有对应的端口号<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">一：Oracle默认是1521</span><br><span class="line">二：SQL Server默认是1433</span><br><span class="line">三：MySQL默认3306</span><br><span class="line">四：pointbase默认是9092</span><br><span class="line">五：DB2默认是5000 </span><br><span class="line">六.MongoDB默认端口号，27017</span><br><span class="line">七.Redis默认端口号，6379</span><br><span class="line">八.memcached默认端口号，11211 </span><br></pre></td></tr></table></figure></li>
+<li>如图，MySQL在3306端口<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9313.jpg"><h2 id="数据库类型区别以及识别意义"><a href="#数据库类型区别以及识别意义" class="headerlink" title="数据库类型区别以及识别意义"></a>数据库类型区别以及识别意义</h2></li>
+<li>数据库的类型，漏洞和结构不同</li>
+<li>获取用户的账号密码，登录网站</li>
+</ul>
+<h1 id="第三方层面"><a href="#第三方层面" class="headerlink" title="第三方层面"></a>第三方层面</h1><p>如何判断有哪些第三方平台和软件如vsftp</p>
+<ul>
+<li>通过nmap -O -sV ip地址扫描—-Apache和PHP和MySQL版本</li>
+</ul>
+<h1 id="某操作系统层面的漏洞演示"><a href="#某操作系统层面的漏洞演示" class="headerlink" title="某操作系统层面的漏洞演示"></a>某操作系统层面的漏洞演示</h1><h2 id="关于msfconsole"><a href="#关于msfconsole" class="headerlink" title="关于msfconsole"></a>关于msfconsole</h2><p>msfconsole简称msf是一款常用的渗透测试工具，包含了常见的漏洞利用模块和生成各种木马。</p>
+<h2 id="常见的参数解读"><a href="#常见的参数解读" class="headerlink" title="常见的参数解读"></a>常见的参数解读</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">-p, –payload &lt; payload&gt; 指定需要使用的payload(攻击荷载)。也可以使用自定义payload,几乎是支持全平台的</span><br><span class="line">-l, –list [module_type] 列出指定模块的所有可用资源. 模块类型包括: payloads, encoders, nops, all</span><br><span class="line">-n, –nopsled &lt; length&gt; 为payload预先指定一个NOP滑动长度</span><br><span class="line">-f, –format &lt; format&gt; 指定输出格式 (使用 –help-formats 来获取msf支持的输出格式列表)</span><br><span class="line">-e, –encoder [encoder] 指定需要使用的encoder（编码器）,指定需要使用的编码，如果既没用-e选项也没用-b选项，则输出raw payload</span><br><span class="line">-a, –arch &lt; architecture&gt; 指定payload的目标架构，例如x86 | x64 | x86_64</span><br><span class="line">–platform &lt; platform&gt; 指定payload的目标平台</span><br><span class="line">-s, –space &lt; length&gt; 设定有效攻击荷载的最大长度，就是文件大小</span><br><span class="line">-b, –bad-chars &lt; list&gt; 设定规避字符集，指定需要过滤的坏字符例如：不使用 ‘\x0f’、’\x00’;</span><br><span class="line">-i, –iterations &lt; count&gt; 指定payload的编码次数</span><br><span class="line">-c, –add-code &lt; path&gt; 指定一个附加的win32 shellcode文件</span><br><span class="line">-x, –template &lt; path&gt; 指定一个自定义的可执行文件作为模板,并将payload嵌入其中</span><br><span class="line">-k, –keep 保护模板程序的动作，注入的payload作为一个新的进程运行</span><br><span class="line">–payload-options 列举payload的标准选项</span><br><span class="line">-o, –out &lt; path&gt; 指定创建好的payload的存放位置</span><br><span class="line">-v, –var-name &lt; name&gt; 指定一个自定义的变量，以确定输出格式</span><br><span class="line">–shellest 最小化生成payload</span><br><span class="line">-h, –help 查看帮助选项</span><br><span class="line">–help-formats 查看msf支持的输出格式列表</span><br></pre></td></tr></table></figure>
+<ul>
+<li>进入msfconsole—use exploit/multi/handler,寻找漏洞<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9314.jpg"></li>
+<li>利用Ms17_010系统漏洞—进入选项8<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9315.jpg"></li>
+<li>设置攻击的地址和自己地址以及攻击载荷—发现失败<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9316.jpg"></li>
+<li>更换靶机，开放445端口<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9317.jpg"></li>
+<li>再次攻击<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9318.jpg"></li>
+<li>emmmm没道理啊，我445端口开了的—-算了，跳过<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9319.jpg"></li>
+</ul>
+<h1 id="数据库漏洞演示（一）"><a href="#数据库漏洞演示（一）" class="headerlink" title="数据库漏洞演示（一）"></a>数据库漏洞演示（一）</h1><ol>
+<li> 进入vulhub靶场的MySQL漏洞<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9320.jpg"></li>
+<li> 进入靶场目录下启动测试环境<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9321.jpg"></li>
+<li> Nmap扫描发现一个MySQL的3306端口<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9322.jpg"></li>
+<li> 搜索漏洞—search MySQL<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9323.jpg"></li>
+<li> 目标设置<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9324.jpg"></li>
+<li> 运行<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9325.jpg"></li>
+<li> 打开root目录下的默认文件<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9326.jpg"></li>
+<li> 哈希解密<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9327.jpg"></li>
+<li> 数据库登录— mysql -u root -P 3306 -h 192.168.0.102 -p<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9328.jpg"><br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9329.jpg"></li>
+<li> 采用shell脚本— for i in <code>seq 1 1000</code>; do mysql -uroot -pwrong -h your-ip -P3306 ; done<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9330.jpg"><br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9331.jpg"></li>
+<li>关闭dockers<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9332.jpg"></li>
+</ol>
+<h1 id="数据库漏洞演示（二）"><a href="#数据库漏洞演示（二）" class="headerlink" title="数据库漏洞演示（二）"></a>数据库漏洞演示（二）</h1><ol>
+<li> 进入环境—phpmyadmin基于web的数据库管理工具<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9333.jpg"><br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9334.jpg"></li>
+<li> Nmap扫描—-发现8080端口开启—Apache环境<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9335.jpg"></li>
+<li> 浏览器访问<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9336.jpg"></li>
+<li> 登录phpmyadmin后台<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9337.jpg"></li>
+</ol>
+<h1 id="数据库漏洞演示（三）"><a href="#数据库漏洞演示（三）" class="headerlink" title="数据库漏洞演示（三）"></a>数据库漏洞演示（三）</h1><ol>
+<li> 进入漏洞环境<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9337.5.jpg"><br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9338.jpg"></li>
+<li> nmap扫描—8080端口打开<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9339.jpg"></li>
+<li> 浏览器登录<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9340.jpg"></li>
+<li> 发送数据包去查看192.168.0.104:8080 /scripts/setup.php，动作为查看/etc/passwd的内容<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9341.jpg"><br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9342.jpg"></li>
+<li> 在虚拟机固定路径创建一个文件<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9343.jpg"></li>
+<li> 抓包读取该目录下的文件—更改路径和字节数—发现只能在网站目录下读取（不能跨目录）<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9344.jpg"></li>
+<li> 重新在etc路径下创建文件并且读取</li>
+</ol>
+<ul>
+<li>创建<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9345.jpg"></li>
+<li>读取—失败，估计是要在docker环境的路径里面写<br><img src="/img/web/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%B3%BB%E7%BB%9F%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%BA%9346.jpg"></li>
+</ul>
+<hr>
+<p>版权声明：本文参考<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv12982912?spm_id_from=333.999.0.0">up主沙漠里的鲸</a>的原创文章特附上原文出处链接及声明。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">早上</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/04/08/Web%20Sec5/">http://example.com/2022/04/08/Web%20Sec5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">凌晨の狗窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/./img/%E5%BE%AE%E4%BF%A1.jpg" target="_blank"><img class="post-qr-code-img" src="/./img/%E5%BE%AE%E4%BF%A1.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/./img/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg" target="_blank"><img class="post-qr-code-img" src="/./img/%E6%94%AF%E4%BB%98%E5%AE%9D.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/03/30/Web%20Sec4/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">web安全 web源码拓展</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NTIzMS8zMTY5OA=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="http://up.keaitupian.com/pic/97/c6/a3/97c6a3bbe0aa0151e9effca1dd1379c6.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">早上</div><div class="author-info__description">斯是狗窝 唯吾可爱</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/RUNOOB0206"><i class="fab fa-github"></i><span>求关注去o((&gt;ω&lt; ))o</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/RUNOOB0206" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1489114432@qq.com" target="_blank" title="邮箱"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到狗紫的博客是ヾ(•ω•`)o</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B1%82%E9%9D%A2"><span class="toc-number">1.</span> <span class="toc-text">操作系统层面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%86%E5%88%AB%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">识别操作系统的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%90%8Cos%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.2.</span> <span class="toc-text">不同os的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B1%82%E9%9D%A2%E6%BC%8F%E6%B4%9E%E7%B1%BB%E5%9E%8B%E5%AF%B9%E5%BA%94%E7%9A%84%E6%84%8F%E4%B9%89%E4%B8%8E%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4"><span class="toc-number">1.3.</span> <span class="toc-text">操作系统层面漏洞类型对应的意义与影响范围</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B1%82%E9%9D%A2"><span class="toc-number">2.</span> <span class="toc-text">数据库层面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B1%BB%E5%9E%8B%E8%AF%86%E5%88%AB"><span class="toc-number">2.1.</span> <span class="toc-text">数据库类型识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B1%BB%E5%9E%8B%E5%8C%BA%E5%88%AB%E4%BB%A5%E5%8F%8A%E8%AF%86%E5%88%AB%E6%84%8F%E4%B9%89"><span class="toc-number">2.2.</span> <span class="toc-text">数据库类型区别以及识别意义</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%B1%82%E9%9D%A2"><span class="toc-number">3.</span> <span class="toc-text">第三方层面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%B1%82%E9%9D%A2%E7%9A%84%E6%BC%8F%E6%B4%9E%E6%BC%94%E7%A4%BA"><span class="toc-number">4.</span> <span class="toc-text">某操作系统层面的漏洞演示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8Emsfconsole"><span class="toc-number">4.1.</span> <span class="toc-text">关于msfconsole</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8F%82%E6%95%B0%E8%A7%A3%E8%AF%BB"><span class="toc-number">4.2.</span> <span class="toc-text">常见的参数解读</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%BC%8F%E6%B4%9E%E6%BC%94%E7%A4%BA%EF%BC%88%E4%B8%80%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">数据库漏洞演示（一）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%BC%8F%E6%B4%9E%E6%BC%94%E7%A4%BA%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">数据库漏洞演示（二）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%BC%8F%E6%B4%9E%E6%BC%94%E7%A4%BA%EF%BC%88%E4%B8%89%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">数据库漏洞演示（三）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/04/08/Web%20Sec5/" title="web安全 系统及数据库"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web安全 系统及数据库"/></a><div class="content"><a class="title" href="/2022/04/08/Web%20Sec5/" title="web安全 系统及数据库">web安全 系统及数据库</a><time datetime="2022-04-07T16:01:06.000Z" title="发表于 2022-04-08 00:01:06">2022-04-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/30/Web%20Sec4/" title="web安全 web源码拓展"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web安全 web源码拓展"/></a><div class="content"><a class="title" href="/2022/03/30/Web%20Sec4/" title="web安全 web源码拓展">web安全 web源码拓展</a><time datetime="2022-03-30T14:53:32.000Z" title="发表于 2022-03-30 22:53:32">2022-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/22/Web%20Sec3/" title="web安全 搭建安全拓展"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web安全 搭建安全拓展"/></a><div class="content"><a class="title" href="/2022/03/22/Web%20Sec3/" title="web安全 搭建安全拓展">web安全 搭建安全拓展</a><time datetime="2022-03-22T15:24:32.000Z" title="发表于 2022-03-22 23:24:32">2022-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/14/Web%20Sec%202/" title="web安全 数据包拓展"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web安全 数据包拓展"/></a><div class="content"><a class="title" href="/2022/03/14/Web%20Sec%202/" title="web安全 数据包拓展">web安全 数据包拓展</a><time datetime="2022-03-14T14:53:32.000Z" title="发表于 2022-03-14 22:53:32">2022-03-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/01/Web%20Sec1/" title="web安全 入门概念名词"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web安全 入门概念名词"/></a><div class="content"><a class="title" href="/2022/03/01/Web%20Sec1/" title="web安全 入门概念名词">web安全 入门概念名词</a><time datetime="2022-03-01T14:46:32.000Z" title="发表于 2022-03-01 22:46:32">2022-03-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 早上</div><div class="footer_custom_text">欢迎常来狗舍😂</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="汪汪~,旺旺~,汪汪~" data-fontsize="15px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body></html>
