@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>生成树协议STP</title>
+      <link href="/2022/07/20/woniuxy%202/"/>
+      <url>/2022/07/20/woniuxy%202/</url>
+      
+        <content type="html"><![CDATA[<p>此文章基于看B站蜗牛学院后整理诞生。</p><hr><h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><ol><li><p>理解STP原理</p></li><li><p>理解STP的选举过程</p></li><li><p>会配置PVSTP+</p><h1 id="STP的概念"><a href="#STP的概念" class="headerlink" title="STP的概念"></a>STP的概念</h1><p>1 . 什么是生成树协议</p></li></ol><ul><li>是一种工作在OS1网络模型中的第二层(数据链路层)的通信协议，基本应用是防止交换机冗余链路产生的环路.用于确保以太网中无环路的逻辑拓扑结构.从而避免了广播风暴,大量占用交换机的资源</li><li>逻辑上断开环路，防止广播风暴的产生</li><li>当线路故障，阻塞接口被激活，恢复通信，起备份线路的作用<h1 id="STP工作原理"><a href="#STP工作原理" class="headerlink" title="STP工作原理"></a>STP工作原理</h1><strong>基本原理：<br>任意一交换机中如果到达根网桥有两条或者两条以上的链路.生成树协议都根据算法仅仅保留•<br>条，把其他切断，从而保证任意两个交换机之间只有一条单一的活动链路。因为这种生成的这种拓扑<br>结构，很像是以根交换机为树千的树形结构</strong></li></ul><ol><li>选择根网桥Root Bridge（交换机）</li></ol><ul><li><p>比较网桥ID，网桥ID最小的为根交换机，网桥ID是唯一的</p></li><li><p> 先比较网桥ID（BID）中的优先级，具有最小优先级的交换机定为根桥。</p></li><li><p> 如果优先级一样，再比较BID中的MAC地址，MAC地址最小的确定为跟桥。</p></li></ul><p>网桥ID（网桥的优先级＋网桥的MAC）</p><p><img src="/img/woniu/%E7%94%9F%E6%88%90%E6%A0%91%E5%8D%8F%E8%AE%AESTP/%E7%94%9F%E6%88%90%E6%A0%91STP1.jpg"></p><p>网桥优先级，默认是32768，可以由管理员进行更改（更改时注意需要设置为4096的倍数）</p><p>根网桥上的端口是不可能被阻塞的</p><ol start="2"><li>选择根端口（Root Ports）</li></ol><ul><li>根路径成本最少（网桥到根网桥的路径所有链路的成本之和）</li><li>直连网桥ID最小</li><li>端口1D最小（端口的1D默认是128）<br><img src="/img/woniu/%E7%94%9F%E6%88%90%E6%A0%91%E5%8D%8F%E8%AE%AESTP/%E7%94%9F%E6%88%90%E6%A0%91STP2.jpg"></li></ul><ol start="3"><li>选择指定端口（Designated Ports）</li></ol><ul><li>根网桥上的所有端口全是指定端口</li><li>在每个网段上选择一个指定端口</li><li>非跟桥上的指定端口，选择顺序：<ul><li>跟路径径成较低</li><li>所在的交换机的网桥ID的值较小</li><li>端口ID的值较小</li></ul></li></ul><ol start="4"><li>没有被选中的端就是阻塞端口</li><li></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>大一python课设</title>
       <link href="/2022/05/22/B%E7%AB%99%E5%BC%B9%E5%B9%95%E8%AF%8D%E4%BA%91%E5%9B%BE/"/>
       <url>/2022/05/22/B%E7%AB%99%E5%BC%B9%E5%B9%95%E8%AF%8D%E4%BA%91%E5%9B%BE/</url>
